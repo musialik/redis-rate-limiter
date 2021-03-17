@@ -75,8 +75,8 @@ RSpec.describe RateLimiter do
 
       it 'raises a custom exception' do
         expect do
-          2.times { rate_limiter.with_limited_rate {} }.to raise_exception(described_class::TimedOut)
-        end
+          2.times { rate_limiter.with_limited_rate {} }
+        end.to raise_exception(described_class::TimedOut)
       end
     end
 
